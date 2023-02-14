@@ -1,37 +1,41 @@
-let books = [];
 
-function showBooks() {
-  let booksHTML = '';
-  books.forEach((book) => {
-    booksHTML += `
-      <div class='book'>
-        <h3>${book.title}</h3>
-        <p>${book.author}</p>
-        <button onClick='removeBook(${book.id})'>Remove</button>
-      </div>
-    `;
-  });
-  const booksContainer = document.querySelector('#books_container');
-  booksContainer.innerHTML = booksHTML;
+class AwesomeBooks {
+  constructor() {
+    this.books = JSON.parse(localStorage.getItem('books')) || [];
+  }
+
+  showBooks() {
+    let booksHTML = '';
+    this.books.forEach((book) => {
+      booksHTML += `
+        <div class='book'>
+          <h3>${book.title}</h3>
+          <p>${book.author}</p>
+          <button onClick='awesomeBooks.removeBook(${book.id})'>Remove</button>
+        </div>
+      `;
+    });
+    const booksContainer = document.querySelector('#books_container');
+    booksContainer.innerHTML = booksHTML;
+  }
+
+  addBook(title, author) {
+    const id = Math.round(Math.random() * 10000);
+    this.books.push({ id, title, author });
+    localStorage.setItem('books', JSON.stringify(this.books));
+    this.showBooks();
+  }
+
+  removeBook(bookId) {
+    const bookIndex = this.books.findIndex((book) => book && book.id === bookId);
+    this.books.splice(bookIndex, 1);
+    localStorage.setItem('books', JSON.stringify(this.books));
+    this.showBooks();
+  }
 }
 
-function addBook(title, author) {
-  const id = Math.round(Math.random() * 10000);
-  books.push({ id, title, author });
-  localStorage.setItem('books', JSON.stringify(books));
-  showBooks();
-}
-
-// eslint-disable-next-line
-function removeBook(bookId) {
-  const bookIndex = books.findIndex((book) => book && book.id === bookId);
-  books.splice(bookIndex, 1);
-  localStorage.setItem('books', JSON.stringify(books));
-  showBooks();
-}
-
-books = JSON.parse(localStorage.getItem('books')) || [];
-showBooks();
+const awesomeBooks = new AwesomeBooks();
+awesomeBooks.showBooks();
 
 document
   .querySelector('#add_new_book_btn')
@@ -40,6 +44,6 @@ document
     const addBookForm = document.forms.add_book_form;
     const bookTitle = addBookForm.elements.bookTitleInput.value;
     const bookAuthor = addBookForm.elements.bookAuthorInput.value;
-    addBook(bookTitle, bookAuthor);
+    awesomeBooks.addBook(bookTitle, bookAuthor);
     addBookForm.reset();
   });
