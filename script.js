@@ -9,9 +9,9 @@ class AwesomeBooks {
       booksHTML += `
         <div class='book'>
           <p>
-            <span class="book-title">"${book.title}"</span>
-            by 
-            <span class="book-author">${book.author}</span>
+            <span>"${book.title}"</span>
+            by
+            <span>${book.author}</span>
           </p>
           <button onClick='awesomeBooks.removeBook(${book.id})'>Remove</button>
         </div>
