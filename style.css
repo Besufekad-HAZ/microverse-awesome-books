@@ -1,26 +1,41 @@
 
 * {
   box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'lato', sans-serif;
 }
 
 body {
   padding: 30px;
 }
 
+button {
+  box-shadow: 4px 4px black;
+  font-weight: bold;
+}
+
 /* Header */
 
+header {
+  margin: 0 auto;
+  display: flex;
+}
 h1 {
   margin: 0;
+  text-align: center;
+  width: 100%;
 }
 
 /* Books section */
 
 #books_container {
-  padding: 20px 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  border: 2px solid black;
+  width: 500px;
+  margin: 40px auto;
 }
 
 .book > * {
@@ -30,15 +45,24 @@ h1 {
 
 .book {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   gap: 10px;
   align-items: flex-start;
-  padding: 20px 0;
-  border-bottom: 1px solid black;
+  padding: 10px;
+  width: 100%;
+}
+
+.book > p {
+  padding: 5px 10px;
+  font-weight: bold;
 }
 
 .book > button {
   padding: 5px 10px;
+}
+
+.book:nth-child(odd) {
+  background-color: rgb(209, 208, 208);
 }
 
 /* Add book form */
@@ -46,17 +70,29 @@ h1 {
 #add_book_form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 10px;
   padding: 20px 0;
+  align-items: center;
+  width: 300px;
+  margin: 2% auto;
 }
 
 #add_book_form > input {
   font-size: 15px;
   padding: 5px;
+  width: 100%;
+  border: 2px solid black;
 }
 
 #add_book_form > button {
   font-size: 15px;
   padding: 5px 20px;
+  align-self: flex-end;
+}
+
+.line {
+  width:25%;
+  height: 0.4em;
+  margin-bottom: 20px;
+  background-color: rgb(4, 41, 41);
 }
