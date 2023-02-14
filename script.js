@@ -23,16 +23,13 @@ class AwesomeBooks {
 
   addBook(title, author) {
     const id = Math.round(Math.random() * 10000);
-    this.books.push({ id, title, author });
+    this.books = [...this.books, { id, title, author }];
     localStorage.setItem('books', JSON.stringify(this.books));
     this.showBooks();
   }
 
   removeBook(bookId) {
-    const bookIndex = this.books.findIndex(
-      (book) => book && book.id === bookId,
-    );
-    this.books.splice(bookIndex, 1);
+    this.books = this.books.filter((book) => book.id !== bookId);
     localStorage.setItem('books', JSON.stringify(this.books));
     this.showBooks();
   }
