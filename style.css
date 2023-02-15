@@ -67,6 +67,7 @@ nav > a:not(:last-child) {
 }
 
 .book {
+  display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 10px;
