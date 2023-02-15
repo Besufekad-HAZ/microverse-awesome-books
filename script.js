@@ -1,10 +1,15 @@
 class AwesomeBooks {
   constructor() {
-    this.books = JSON.parse(localStorage.getItem("books")) || [];
+    this.books = JSON.parse(localStorage.getItem('books')) || [];
   }
 
   showBooks() {
-    let booksHTML = "";
+    let booksHTML = '';
+    if (this.books.length === 0) {
+      document.querySelector('#books_container > p').style.display = 'block';
+    } else {
+      document.querySelector('#books_container > p').style.display = '';
+    }
     this.books.forEach((book) => {
       booksHTML += `
         <div class='book'>
@@ -17,20 +22,21 @@ class AwesomeBooks {
         </div>
       `;
     });
-    const booksContainer = document.querySelector("#books_container");
+    const booksContainer = document.querySelector('#book_list');
     booksContainer.innerHTML = booksHTML;
+    window.location.href = '#books_container';
   }
 
   addBook(title, author) {
     const id = Math.round(Math.random() * 10000);
     this.books = [...this.books, { id, title, author }];
-    localStorage.setItem("books", JSON.stringify(this.books));
+    localStorage.setItem('books', JSON.stringify(this.books));
     this.showBooks();
   }
 
   removeBook(bookId) {
     this.books = this.books.filter((book) => book.id !== bookId);
-    localStorage.setItem("books", JSON.stringify(this.books));
+    localStorage.setItem('books', JSON.stringify(this.books));
     this.showBooks();
   }
 }
@@ -39,50 +45,28 @@ const awesomeBooks = new AwesomeBooks();
 awesomeBooks.showBooks();
 
 document
-  .querySelector("#add_new_book_btn")
-  .addEventListener("click", (event) => {
+  .querySelector('#add_new_book_btn')
+  .addEventListener('click', (event) => {
     event.preventDefault();
     const addBookForm = document.forms.add_book_form;
     const bookTitle = addBookForm.elements.bookTitleInput.value;
     const bookAuthor = addBookForm.elements.bookAuthorInput.value;
-    if (bookTitle.trim() !== "" && bookAuthor.trim() !== "") {
+    if (bookTitle.trim() !== '' && bookAuthor.trim() !== '') {
       awesomeBooks.addBook(bookTitle, bookAuthor);
       addBookForm.reset();
     }
   });
 
-window.location.href = "#books_container";
-
-const addBook = document.querySelector(".add-book");
-const listBook = document.querySelector(".book-list");
-const contact = document.querySelector(".contact");
-
-contact.addEventListener("click", () => {
-  document.querySelector("#books_container").style.display = "none";
-  document.querySelector("#add_new_book").style.display = "none";
-  document.querySelector("#contact_section").style.display = "flex";
-});
-
-addBook.addEventListener("click", () => {
-  document.querySelector("#books_container").style.display = "none";
-  document.querySelector("#add_new_book").style.display = "block";
-  document.querySelector("#contact_section").style.display = "none";
-});
-
-listBook.addEventListener("click", () => {
-  document.querySelector("#books_container").style.display = "block";
-  document.querySelector("#add_new_book").style.display = "none";
-  document.querySelector("#contact_section").style.display = "none";
-});
-
 // Date section
 
-const date = new Date();
-const time_date = date.toLocaleTimeString("en-US", {
-  hour: "numeric",
-  minute: "numeric",
-  hour12: true,
-});
-
-const dateTime = document.querySelector("#date-display");
-dateTime.innerHTML = `${date.toDateString()}, ${time_date}`;
+const dateTimeDisplay = document.querySelector('#date-display');
+setInterval(() => {
+  const date = new Date();
+  const dateTime = date.toLocaleTimeString('en-US', {
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    hour12: true,
+  });
+  dateTimeDisplay.innerHTML = `${date.toDateString()}, ${dateTime}`;
+}, 1000);
