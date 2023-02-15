@@ -70,9 +70,19 @@ addBook.addEventListener("click", () => {
 });
 
 listBook.addEventListener("click", () => {
- document.querySelector("#books_container").style.display = "block";
- document.querySelector("#add_new_book").style.display = "none";
- document.querySelector("#contact_section").style.display = "none";
+  document.querySelector("#books_container").style.display = "block";
+  document.querySelector("#add_new_book").style.display = "none";
+  document.querySelector("#contact_section").style.display = "none";
 });
 
+// Date section
 
+const date = new Date();
+const time_date = date.toLocaleTimeString("en-US", {
+  hour: "numeric",
+  minute: "numeric",
+  hour12: true,
+});
+
+const dateTime = document.querySelector("#date-display");
+dateTime.innerHTML = `${date.toDateString()}, ${time_date}`;
