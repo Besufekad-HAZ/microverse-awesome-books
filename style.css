@@ -24,14 +24,41 @@ button {
 
 /* Header */
 
+#navbar {
+  border: 2px solid black;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#date-display {
+  padding: 10px;
+  border: 1px solid black;
+}
+
 h1 {
-  text-align: center;
+  font-size: 20px;
+}
+
+nav {
+  display: flex;
+}
+
+nav > a {
+  font-weight: bold;
+  padding: 0 20px;
+  color: black;
+  text-decoration: none;
+}
+
+nav > a:not(:last-child) {
+  border-right: 2px solid black;
 }
 
 /* Books section */
 
 #books_container {
-  display: flex;
   flex-direction: column;
   align-items: center;
   border: 2px solid black;
@@ -84,4 +111,13 @@ h1 {
   font-size: 15px;
   padding: 5px 20px;
   align-self: flex-end;
+}
+
+/* All sections */
+section {
+  display: none;
+}
+
+section:target {
+  display: flex;
 }

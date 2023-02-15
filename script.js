@@ -50,3 +50,5 @@ document
       addBookForm.reset();
     }
   });
+
+window.location.href = '#books_container';
