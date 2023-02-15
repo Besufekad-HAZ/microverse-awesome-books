@@ -8,10 +8,14 @@
 
 body {
   padding: 30px;
+  background: url(./images/bg.jpg);
+  background-size: 100% 100vh;
+  background-repeat: no-repeat;
+  color: white;
 }
 
 button {
-  box-shadow: 4px 4px black;
+  box-shadow: 4px 4px rgb(255, 255, 255);
   font-weight: bold;
 }
 
@@ -19,26 +23,28 @@ button {
   width: 25%;
   height: 5px;
   margin-bottom: 20px;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
 }
 
 /* Header */
 
 #navbar {
-  border: 2px solid black;
+  border: 2px solid rgb(255, 255, 255);
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgb(255, 255, 255,0.2);
 }
 
 #date-display {
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid rgb(255, 255, 255);
 }
 
 h1 {
   font-size: 20px;
+  color: antiquewhite;
 }
 
 nav {
@@ -48,12 +54,12 @@ nav {
 nav > a {
   font-weight: bold;
   padding: 0 20px;
-  color: black;
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
 nav > a:not(:last-child) {
-  border-right: 2px solid black;
+  border-right: 2px solid rgb(255, 255, 255);
 }
 
 /* Books section */
@@ -61,7 +67,7 @@ nav > a:not(:last-child) {
 #books_container {
   flex-direction: column;
   align-items: center;
-  border: 2px solid black;
+  border: 2px solid rgb(255, 255, 255);
   width: 500px;
   margin: 40px auto;
 }
@@ -104,7 +110,7 @@ nav > a:not(:last-child) {
   font-size: 15px;
   padding: 5px;
   width: 100%;
-  border: 2px solid black;
+  border: 2px solid rgb(255, 255, 255);
 }
 
 #add_book_form > button {

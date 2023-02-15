@@ -1,42 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="images/awesome_books.jpg">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-  <title>Awesome Books</title>
-</head>
-<body>
-  <header>
-    <div id="navbar">
-      <h1>Awesome Books</h1>
-      <nav>
-        <a href="#books_container">List</a>
-        <a href="#add_new_book">Add new</a>
-        <a href="#contact_section">Contact</a>
-      </nav>
-    </div>
-    <div id="date-display"></div>
-  </header>
-  <main>
-    <section id="books_container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/awesome_books.jpg" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Awesome Books</title>
+  </head>
+  <body>
+    <header>
+      <div id="navbar">
+        <h1>Awesome Books</h1>
+        <nav>
+          <a href="#books_container" class="book-list">List</a>
+          <a href="#add_new_book" class="add-book">Add new</a>
+          <a href="#contact_section" class="contact">Contact</a>
+        </nav>
+      </div>
+      <div id="date-display"></div>
+    </header>
+    <main>
+      <section id="books_container">
+        <h2>Awesome Books</h2>
+        <ul class="listOfBooks"></ul>
+        <p class="empty-msg">There are no Books available</p>
+      </section>
 
-    </section>
-    <section id="add_new_book">
-      <form id="add_book_form">
-        <span class="line"></span>
-        <h2>Add a New Book</h2>
-        <input name="bookTitleInput" placeholder="Title" />
-        <input name="bookAuthorInput" placeholder="Author" />
-        <button type="submit" id="add_new_book_btn">Add</button>
-      </form>
-    </section>
-    <section id="contact_section">
-      Contact
-    </section>
-  </main>
-</body>
+      <section id="add_new_book">
+        <form id="add_book_form">
+          <span class="line"></span>
+          <h2>Add a New Book</h2>
+          <input name="bookTitleInput" placeholder="Title" />
+          <input name="bookAuthorInput" placeholder="Author" />
+          <button type="submit" id="add_new_book_btn">Add</button>
+        </form>
+      </section>
+
+      <section id="contact_section">
+        <h2>Contact information</h2>
+        <p>
+          Do have any questions or you just want to say "Hello"? You can reach
+          out to us!
+        </p>
+        <ul>
+          <li>Our e-mail: mail@mail.com</li>
+          <li>Our phone number: 0043586534422</li>
+          <li>Our address: Streetname 22, 84503 City, Country</li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <p>© 2023, All Rights Reserved || Awesome Books</p>
+    </footer>
+  </body>
 </html>
