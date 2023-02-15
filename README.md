@@ -95,6 +95,7 @@ A website for storing and retrieving books
 ### Prerequisites
 
 In order to run this project you need:
+
 - A web browser
 
 <!--
@@ -114,11 +115,9 @@ cd my-folder
 git clone https://github.com/preciousbetine/microverse-awesome-books.git
 ```
 
-
 ### Install
 
 No Installation required!
-
 
 <!-- Example command:
 
@@ -131,6 +130,7 @@ No Installation required!
 ### Usage
 
 To run the project:
+
 - Run the html file in a web browser.
 <!--
 Example command:
@@ -138,6 +138,7 @@ Example command:
 ```sh
   rails server
 ```
+
 -
 
 ### Run tests
@@ -153,7 +154,8 @@ Example command:
 --->
 
 ### Deployment <a name="triangular_flag_on_post-deployment"></a>
-  This website is live at [this link](https://preciousbetine.github.io/microverse-awesome-books)
+
+This website is live at [this link](https://preciousbetine.github.io/microverse-awesome-books)
 
 <!--
 Example:
@@ -179,7 +181,9 @@ Example:
 
 👤 **Besu Alemu**
 
-- GitHub: [Besu Alemu](https://github.com/besufekad-haz)
+- GitHub: [@Besufekad-HAZ](https://github.com/Besufekad-HAZ)
+- Twitter: [@BesufekadAlemu7](https://twitter.com/BesufekadAlemu7)
+- LinkedIn: [@besura](www.linkedin.com/in/besura)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -189,9 +193,10 @@ Example:
 
 <!-- > Describe 1 - 3 features you will add to the project. -->
 <!-- None for now 🙂 -->
+
 - [ ] **Full site with nav bar**
-<!-- - [ ] **More pages** -->
-<!-- - [ ] **[new_feature_3]** -->
+  <!-- - [ ] **More pages** -->
+  <!-- - [ ] **[new_feature_3]** -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -220,6 +225,7 @@ If you like this project, give it a ⭐
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 <!-- > Give credit to everyone who inspired your codebase. -->
+
 No acknowledgements 😄
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
